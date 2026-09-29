@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Actividades Interactivas del Módulo #3 - Seguridad y Privacidad Digital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #222222;
+            line-height: 1.5;
+            margin: 30px;
+            background-color: #f4f9f4;
+        }
+        h1 {
+            color: #0b6623;
+            text-align: center;
+            font-size: 22px;
+            text-transform: uppercase;
+        }
+        h2 {
+            color: #117a35;
+            border-bottom: 2px solid #2e8b57;
+            padding-bottom: 5px;
+            margin-top: 35px;
+            font-size: 16px;
+        }
+        .activity-box {
+            background-color: #ffffff;
+            border: 1px solid #c8e6c9;
+            border-left: 5px solid #2e8b57;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .question {
+            font-weight: bold;
+            color: #1e4d2b;
+            margin-bottom: 10px;
+        }
+        .options {
+            margin-bottom: 10px;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f5e9;
+            border-left: 3px solid #2e8b57;
+            font-size: 13px;
+            display: none;
+        }
+        button {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #117a35;
+        }
+        .img-preview {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #c8e6c9;
+            border-radius: 4px;
+            margin: 10px 0;
+            padding: 5px;
+            background-color: #f9fbf9;
+            display: block;
+        }
+    </style>
+    <script>
+        function checkAnswer(id, correctOpt, feedbackId) {
+            const selected = document.querySelector('input[name="' + id + '"]:checked');
+            const feedback = document.getElementById(feedbackId);
+            feedback.style.display = "block";
+            if (!selected) {
+                feedback.innerHTML = "Por favor, selecciona una opción.";
+                feedback.style.backgroundColor = "#fff3cd";
+                return;
+            }
+            if (selected.value === correctOpt) {
+                feedback.innerHTML = "¡Respuesta correcta! Excelente decisión.";
+                feedback.style.backgroundColor = "#e8f5e9";
+            } else {
+                feedback.innerHTML = "Respuesta incorrecta. Analiza bien el impacto en tu seguridad y privacidad.";
+                feedback.style.backgroundColor = "#ffebee";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Actividades Interactivas - Módulo #3</h1>
+    <p style="text-align: center; font-style: italic; color: #555;">Desarrolla las siguientes actividades prácticas para afianzar tus conocimientos sobre redes sociales, privacidad y navegación segura.</p>
+
+    <!-- ACTIVIDAD 1 -->
+    <div class="activity-box">
+        <h2>Actividad 1: Redes sociales: ¿Público o Privado?</h2>
+        <p>Lee cada situación y selecciona el nivel de audiencia adecuado para proteger tu información.</p>
+        
+        <div class="question">Caso 1: "Me voy de vacaciones 2 semanas con toda mi familia y la casa quedará completamente sola."</div>
+        <div class="options">
+            <label><input type="radio" name="act1_q1" value="publico"> Público (Visible para todo el mundo)</label>
+            <label><input type="radio" name="act1_q1" value="amigos"> Amigos cercanos</label>
+            <label><input type="radio" name="act1_q1" value="privado"> Privado (Solo yo / Nadie más)</label>
+        </div>
+        <button onclick="checkAnswer('act1_q1', 'privado', 'fb1')">Comprobar</button>
+        <div id="fb1" class="feedback"></div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <div class="question">Caso 2: "Foto de mi perrito durmiendo en el sofá."</div>
+        <div class="options">
+            <label><input type="radio" name="act1_q2" value="publico"> Público o Amigos</label>
+            <label><input type="radio" name="act1_q2" value="privado"> Estrictamente Privado</label>
+        </div>
+        <button onclick="checkAnswer('act1_q2', 'publico', 'fb2')">Comprobar</button>
+        <div id="fb2" class="feedback"></div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <div class="question">Caso 3: "Compartir mis calificaciones universitarias o un certificado que incluye número de cédula."</div>
+        <div class="options">
+            <label><input type="radio" name="act1_q3" value="publico"> Público (Para redes abiertas)</label>
+            <label><input type="radio" name="act1_q3" value="privado"> Estrictamente Privado / Ocultar datos sensibles</label>
+        </div>
+        <button onclick="checkAnswer('act1_q3', 'privado', 'fb3')">Comprobar</button>
+        <div id="fb3" class="feedback"></div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <div class="question">Caso 4: "Check-in en tiempo real indicando la ubicación exacta donde te encuentras cenando con amigos."</div>
+        <div class="options">
+            <label><input type="radio" name="act1_q4" value="publico"> Público en vivo</label>
+            <label><input type="radio" name="act1_q4" value="amigos"> Restringido a círculo íntimo o publicar al regresar</label>
+        </div>
+        <button onclick="checkAnswer('act1_q4', 'amigos', 'fb4')">Comprobar</button>
+        <div id="fb4" class="feedback"></div>
+    </div>
+
+    <!-- ACTIVIDAD 2 (Anterior Actividad 3): Navegación segura -->
+    <div class="activity-box">
+        <h2>Actividad 2: Navegación segura: ¿Haces clic?</h2>
+        <p>Analiza los siguientes enlaces y determina cuál es seguro para abrir.</p>
+        
+        <div class="question">Caso 1: ¿Cuál de los siguientes enlaces (URLs) muestra un dominio oficial y seguro para realizar un trámite bancario?</div>
+        <div class="options">
+            <label><input type="radio" name="act3_q1" value="falso"> https://banco-pichincha-actualizacion-datos.com/login</label>
+            <label><input type="radio" name="act3_q1" value="seguro"> https://www.pichincha.com</label>
+            <label><input type="radio" name="act3_q1" value="extra"> http://banco-premios-ecuador.net/gratis</label>
+        </div>
+        <button onclick="checkAnswer('act3_q1', 'seguro', 'fb5')">Comprobar</button>
+        <div id="fb5" class="feedback"></div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <div class="question">Caso 2: Recibes un mensaje con el enlace: <code>https://net-flix-actualiza-pago.com</code>. ¿Es seguro hacer clic?</div>
+        <div class="options">
+            <label><input type="radio" name="act3_q2" value="no"> No, es un dominio falso (phishing) que imita a Netflix para robar datos de tarjetas.</label>
+            <label><input type="radio" name="act3_q2" value="si"> Sí, porque dice Netflix en el texto.</label>
+        </div>
+        <button onclick="checkAnswer('act3_q2', 'no', 'fb6')">Comprobar</button>
+        <div id="fb6" class="feedback"></div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <div class="question">Caso 3: ¿Qué indica el protocolo "https://" al inicio de una dirección web?</div>
+        <div class="options">
+            <label><input type="radio" name="act3_q3" value="cifrado"> Que la conexión entre tu navegador y el sitio web está cifrada y es segura.</label>
+            <label><input type="radio" name="act3_q3" value="gratis"> Que el sitio web es 100% confiable y libre de estafas.</label>
+        </div>
+        <button onclick="checkAnswer('act3_q3', 'cifrado', 'fb7')">Comprobar</button>
+        <div id="fb7" class="feedback"></div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <div class="question">Caso 4: Analiza el siguiente enlace sospechoso recibido por correo: <code>http://sri-gob-ec-devolucion-impuestos.net/tramite</code></div>
+        <div class="options">
+            <label><input type="radio" name="act3_q4" value="valido"> Es un trámite real del SRI.</label>
+            <label><input type="radio" name="act3_q4" value="fraude"> Es una URL fraudulenta (usa extensiones .net ajenas al dominio oficial .gob.ec).</label>
+        </div>
+        <button onclick="checkAnswer('act3_q4', 'fraude', 'fb8')">Comprobar</button>
+        <div id="fb8" class="feedback"></div>
+    </div>
+
+    <!-- ACTIVIDAD 3 (Anterior Actividad 4): Información en redes -->
+    <div class="activity-box">
+        <h2>Actividad 3: Información en redes: ¿Verdad o mentira?</h2>
+        <p>Evalúa las señales de alerta en cadenas y mensajes masivos.</p>
+        
+        <div class="question">Caso 1: Recibes una cadena por WhatsApp que dice: "¡Felicidades! Ganaste un bono de $500 del gobierno. Haz clic aquí y reenvía este mensaje a 10 grupos para reclamarlo". ¿Qué indica esto?</div>
+        <div class="options">
+            <label><input type="radio" name="act4_q1" value="real"> Es una oportunidad real del gobierno.</label>
+            <label><input type="radio" name="act4_q1" value="estafa"> Es una cadena falsa (estafa / phishing) que busca robar información o generar tráfico malicioso.</label>
+        </div>
+        <button onclick="checkAnswer('act4_q1', 'estafa', 'fb9')">Comprobar</button>
+        <div id="fb9" class="feedback"></div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <div class="question">Caso 2: Te llega una alerta urgente sobre un supuesto virus informático mortal que se transmite por la pantalla del celular y pide borrar archivos del sistema.</div>
+        <div class="options">
+            <label><input type="radio" name="act4_q2" value="falso"> Es un bulo (fake news) clásico diseñado para generar pánico innecesario.</label>
+            <label><input type="radio" name="act4_q2" value="verdadero"> Es verdad, debo advertir a todos mis contactos inmediatamente.</label>
+        </div>
+        <button onclick="checkAnswer('act4_q2', 'falso', 'fb10')">Comprobar</button>
+        <div id="fb10" class="feedback"></div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+
+        <div class="question">Caso 3: Una publicación en redes sociales asegura que "un supermercado local regala carritos de compra llenos de mercadería por su aniversario si comentas 'Participo'".</div>
+        <div class="options">
+            <label><input type="radio" name="act4_q3" value="falso"> Es una estafa típica de recolección de datos (phishing) o perfiles falsos.</label>
+            <label><input type="radio" name="act4_q3" value="verdadero"> Es una promoción oficial verificada.</label>
+        </div>
+        <button onclick="checkAnswer('act4_q3', 'falso', 'fb11')">Comprobar</button>
+        <div id="fb11" class="feedback"></div>
+    </div>
+
+</body>
+</html>
